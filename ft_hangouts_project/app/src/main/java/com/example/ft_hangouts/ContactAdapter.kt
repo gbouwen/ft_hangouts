@@ -1,5 +1,6 @@
 package com.example.ft_hangouts
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,18 @@ class ContactAdapter(private val contactList: List<Contact>)
     : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
 
     // Holds 1 item (contact_name)
-    // TODO add multiple textViews to show all data
-    class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+    // TODO add multiple textViews to show all data and make it look like a card so it looks clickable
+    inner class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.contact_name)
+
+        init {
+            view.setOnClickListener {
+                val position: Int = adapterPosition
+                val intent = Intent(view.context, UserDetails::class.java)
+                intent.putExtra("contact_id", contactList[position].id)
+                view.context.startActivity(intent)
+            }
+        }
     }
 
     // Creates a new view
@@ -24,7 +34,8 @@ class ContactAdapter(private val contactList: List<Contact>)
 
     // Puts the contact name in the list
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.textView.text = contactList[position].firstName
+        val contact = contactList[position]
+        holder.textView.text = contact.firstName
     }
 
     // Returns size of list

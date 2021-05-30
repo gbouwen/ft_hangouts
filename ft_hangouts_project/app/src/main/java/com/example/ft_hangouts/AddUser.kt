@@ -20,7 +20,7 @@ class AddUser : AppCompatActivity() {
 
     private fun createNewUser(binding: AddUserBinding) {
         // Create new contact with the values from the input fields
-        val contact = Contact(
+        val contact = Contact( -1,
             binding.firstNameInput.text.toString(),
             binding.lastNameInput.text.toString(),
             binding.companyInput.text.toString(),

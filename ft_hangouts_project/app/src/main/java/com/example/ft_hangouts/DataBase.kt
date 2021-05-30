@@ -60,7 +60,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
                 val phoneNumber = cursor.getString(4)
                 val email = cursor.getString(5)
 
-                val contact = Contact(firstName, lastName, company, phoneNumber, email)
+                val contact = Contact(-1, firstName, lastName, company, phoneNumber, email)
                 list.add(contact)
             } while (cursor.moveToNext())
         }

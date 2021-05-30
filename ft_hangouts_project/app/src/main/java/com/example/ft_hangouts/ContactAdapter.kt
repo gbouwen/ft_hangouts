@@ -15,10 +15,11 @@ class ContactAdapter(private val contactList: List<Contact>)
     inner class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.contact_name)
 
+        // Makes the list items clickable
         init {
             view.setOnClickListener {
                 val position: Int = adapterPosition
-                val intent = Intent(view.context, UserDetails::class.java)
+                val intent = Intent(view.context, ContactDetails::class.java)
                 intent.putExtra("contact_id", contactList[position].id)
                 view.context.startActivity(intent)
             }

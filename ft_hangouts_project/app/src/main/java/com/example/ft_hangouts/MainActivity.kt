@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         // Go to AddUser activity
         val addButton: Button = findViewById(R.id.add_button)
         addButton.setOnClickListener {
-            val intent = Intent(this, AddUser::class.java)
+            val intent = Intent(this, AddContact::class.java)
             startActivity(intent)
         }
     }
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        // Generates the list of all the contacts in the DataBase
+        // Generates and shows the list of all the contacts in the DataBase
         showAllContacts()
     }
 

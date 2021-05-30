@@ -3,24 +3,24 @@ package com.example.ft_hangouts
 import android.os.Bundle
 import android.os.SystemClock.sleep
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ft_hangouts.databinding.AddUserBinding
+import com.example.ft_hangouts.databinding.AddContactBinding
 
-class AddUser : AppCompatActivity() {
+class AddContact : AppCompatActivity() {
 
-    private lateinit var binding: AddUserBinding
+    private lateinit var binding: AddContactBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = AddUserBinding.inflate(layoutInflater)
+        binding = AddContactBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Add new user to database, return back to MainActivity
         binding.createButton.setOnClickListener { createNewUser(binding) }
     }
 
-    private fun createNewUser(binding: AddUserBinding) {
+    private fun createNewUser(binding: AddContactBinding) {
         // Create new contact with the values from the input fields
-        val contact = Contact( -1,
+        val contact = Contact( -1L,
             binding.firstNameInput.text.toString(),
             binding.lastNameInput.text.toString(),
             binding.companyInput.text.toString(),

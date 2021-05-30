@@ -1,0 +1,2 @@
+rootProject.name = "FT_Hangouts"
+include ':app'

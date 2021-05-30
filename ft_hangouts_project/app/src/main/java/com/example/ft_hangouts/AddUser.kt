@@ -14,7 +14,7 @@ class AddUser : AppCompatActivity() {
         binding = AddUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Add new user to database and go back to MainActivity
+        // Add new user to database, return back to MainActivity
         binding.createButton.setOnClickListener { createNewUser(binding) }
     }
 
@@ -28,9 +28,9 @@ class AddUser : AppCompatActivity() {
             binding.emailInput.text.toString()
         )
 
-        // Phone number can't be empty
+        // Phone number and first name can't be empty
         // TODO GIVE CLEAR ERROR MESSAGE IF EMPTY
-        if (contact.phoneNumber.isEmpty())
+        if (contact.phoneNumber.isEmpty() || contact.firstName.isEmpty())
             return
 
         // Get DataBase instance and add Contact to DataBase

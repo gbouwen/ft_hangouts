@@ -54,11 +54,11 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         val cursor: Cursor = db.rawQuery(query, null)
         if (cursor.moveToFirst()) {
             do {
-                val firstName = cursor.getColumnName(0)
-                val lastName = cursor.getColumnName(1)
-                val company = cursor.getColumnName(2)
-                val phoneNumber = cursor.getColumnName(3)
-                val email = cursor.getColumnName(4)
+                val firstName = cursor.getString(1)
+                val lastName = cursor.getString(2)
+                val company = cursor.getString(3)
+                val phoneNumber = cursor.getString(4)
+                val email = cursor.getString(5)
 
                 val contact = Contact(firstName, lastName, company, phoneNumber, email)
                 list.add(contact)

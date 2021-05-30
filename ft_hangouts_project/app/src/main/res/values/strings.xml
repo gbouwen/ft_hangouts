@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Hangouts</string>
+    <string name="create_contact">+</string>
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="company">Company:</string>
+    <string name="phone_number">Phone number:</string>
+    <string name="email">Email:</string>
+    <string name="new_contact_details">New contact details:</string>
+    <string name="create_new_contact">Create new contact</string>
 </resources>

@@ -28,14 +28,14 @@ class AddUser : AppCompatActivity() {
             binding.emailInput.text.toString()
         )
 
-        // Phone number and first name can't be empty
-        // TODO GIVE CLEAR ERROR MESSAGES IF EMPTY
-        if (contact.phoneNumber.isEmpty() || contact.firstName.isEmpty())
+        // Phone number can't be empty
+        // TODO GIVE CLEAR ERROR MESSAGE IF EMPTY
+        if (contact.phoneNumber.isEmpty())
             return
 
         // Get DataBase instance and add Contact to DataBase
         val dataBaseHelper = DataBase(this)
-        val success = dataBaseHelper.addToDatabase(contact)
+        dataBaseHelper.addToDatabase(contact)
         sleep(500)
         finish()
     }

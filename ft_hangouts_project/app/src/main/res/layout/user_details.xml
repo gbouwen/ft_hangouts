@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--TODO SET USER VALUES IN EDITTEXTS-->
+
     <!--Title-->
     <TextView
         android:id="@+id/contact_details"
@@ -13,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:text="@string/new_contact_details"
+        android:text="@string/contact_details"
         android:textSize="24sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
@@ -130,14 +132,24 @@
         app:layout_constraintTop_toBottomOf="@id/phone_number_input"
         app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Create button-->
+    <!--Save button-->
     <Button
-        android:id="@+id/create_button"
+        android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_new_contact"
+        android:text="@string/save_contact"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@id/first_name_input"
         app:layout_constraintTop_toBottomOf="@id/email_input"/>
+
+    <!--Delete button-->
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_contact"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/first_name_input"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

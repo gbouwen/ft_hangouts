@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Go to AddUser activity
         val addButton: Button = findViewById(R.id.add_button)
         addButton.setOnClickListener {
             val intent = Intent(this, AddUser::class.java)

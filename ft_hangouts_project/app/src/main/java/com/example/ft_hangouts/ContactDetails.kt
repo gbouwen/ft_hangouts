@@ -2,7 +2,6 @@ package com.example.ft_hangouts
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock.sleep
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ft_hangouts.databinding.ContactDetailsBinding
@@ -19,7 +18,6 @@ class ContactDetails : AppCompatActivity() {
         // Edits the contact details and returns to MainActivity
         binding.editButton.setOnClickListener {
             editContact()
-            sleep(500)
             finish()
         }
 
@@ -27,7 +25,6 @@ class ContactDetails : AppCompatActivity() {
         // TODO add confirm dialog on delete
         binding.deleteButton.setOnClickListener {
             deleteContact()
-            sleep(500)
             finish()
         }
 

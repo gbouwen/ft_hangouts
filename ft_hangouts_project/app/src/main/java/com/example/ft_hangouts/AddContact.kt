@@ -1,7 +1,6 @@
 package com.example.ft_hangouts
 
 import android.os.Bundle
-import android.os.SystemClock.sleep
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ft_hangouts.databinding.AddContactBinding
 
@@ -36,7 +35,6 @@ class AddContact : AppCompatActivity() {
         // Get DataBase instance and add Contact to DataBase
         val dataBaseHelper = DataBase(this)
         dataBaseHelper.addToDatabase(contact)
-        sleep(500)
         finish()
     }
 }

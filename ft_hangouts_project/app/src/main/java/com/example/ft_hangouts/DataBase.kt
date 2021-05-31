@@ -105,7 +105,13 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
     // TODO need to figure out how to update every column
     fun editContact(contact: Contact) {
         val db = this.writableDatabase
-        val query = "UPDATE $contactTable SET $columnFirstName = '${contact.firstName}' WHERE $columnId = ${contact.id}"
+        val query = "UPDATE $contactTable " +
+                "SET $columnFirstName = '${contact.firstName}', " +
+                "$columnLastName = '${contact.lastName}', " +
+                "$columnCompany = '${contact.company}', " +
+                "$columnPhoneNumber = '${contact.phoneNumber}', " +
+                "$columnEmail = '${contact.email}' " +
+                "WHERE $columnId = ${contact.id}"
         val cursor = db.rawQuery(query, null)
         cursor.moveToFirst()
         cursor.close()

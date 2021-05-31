@@ -86,19 +86,28 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         val db = this.readableDatabase
         val query = "SELECT * FROM $contactTable WHERE $columnId = $id"
         val cursor = db.rawQuery(query, null)
-        if (cursor.moveToNext()) {
-            val contact = createContact(cursor)
-            cursor.close()
-            return contact
-        }
-        return Contact(0, "", "", "", "", "")
+        cursor.moveToNext()
+        val contact = createContact(cursor)
+        cursor.close()
+        return contact
     }
 
-    // Deletes a user from the database
+    // Deletes a contact from the database
     fun deleteContact(id: Long) {
         val db = this.writableDatabase
         val query = "DELETE FROM $contactTable WHERE $columnId = $id"
         val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+        cursor.close()
+    }
+
+    // Edits the data of the contact
+    // TODO need to figure out how to update every column
+    fun editContact(contact: Contact) {
+        val db = this.writableDatabase
+        val query = "UPDATE $contactTable SET $columnFirstName = '${contact.firstName}' WHERE $columnId = ${contact.id}"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
         cursor.close()
     }
 }

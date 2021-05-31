@@ -1,5 +1,6 @@
 package com.example.ft_hangouts
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock.sleep
 import android.widget.Toast
@@ -28,6 +29,10 @@ class ContactDetails : AppCompatActivity() {
             deleteContact()
             sleep(500)
             finish()
+        }
+
+        binding.sendMessageButton.setOnClickListener {
+            sendMessage()
         }
     }
 
@@ -73,8 +78,13 @@ class ContactDetails : AppCompatActivity() {
         val lastName = binding.lastNameInput.text.toString()
         val company = binding.companyInput.text.toString()
         val phoneNumber = binding.phoneNumberInput.text.toString()
-        val email = binding.phoneNumberInput.text.toString()
+        val email = binding.emailInput.text.toString()
 
         return (Contact(id, firstName, lastName, company, phoneNumber, email))
+    }
+
+    private fun sendMessage() {
+        val intent = Intent(this, SendMessage::class.java)
+        startActivity(intent)
     }
 }

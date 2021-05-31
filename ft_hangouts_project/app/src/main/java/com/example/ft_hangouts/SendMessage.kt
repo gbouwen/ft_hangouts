@@ -1,4 +1,11 @@
 package com.example.ft_hangouts
 
-class SendMessage {
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class SendMessage : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.send_message)
+    }
 }

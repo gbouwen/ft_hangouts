@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--TODO SET USER VALUES IN EDITTEXTS-->
-
     <!--Title-->
     <TextView
         android:id="@+id/contact_details"
@@ -132,7 +130,7 @@
         app:layout_constraintTop_toBottomOf="@id/phone_number_input"
         app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Save button-->
+    <!--Edit button-->
     <Button
         android:id="@+id/edit_button"
         android:layout_width="wrap_content"
@@ -151,5 +149,14 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@id/first_name_input"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--Send message button-->
+    <Button
+        android:id="@+id/send_message_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_message"
+        app:layout_constraintStart_toStartOf="@id/email"
+        app:layout_constraintTop_toTopOf="@id/edit_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

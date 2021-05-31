@@ -1,162 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <!--Title-->
-    <TextView
-        android:id="@+id/contact_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/contact_details"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <!--First name -->
-    <TextView
-        android:id="@+id/first_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/first_name"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contact_details" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/first_name_input"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="16dp"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/contact_details"
-        app:layout_constraintStart_toEndOf="@id/first_name" />
+        <!--Title-->
+        <TextView
+            android:id="@+id/contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/contact_details"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    <!--Last name-->
-    <TextView
-        android:id="@+id/last_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/last_name"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_name" />
+        <!--First name -->
+        <TextView
+            android:id="@+id/first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/first_name"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_details" />
 
-    <EditText
-        android:id="@+id/last_name_input"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/first_name_input"
-        app:layout_constraintStart_toStartOf="@id/first_name_input" />
+        <EditText
+            android:id="@+id/first_name_input"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="16dp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/contact_details"
+            app:layout_constraintStart_toEndOf="@id/first_name" />
 
-    <!--Company-->
-    <TextView
-        android:id="@+id/company"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/company"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/last_name" />
+        <!--Last name-->
+        <TextView
+            android:id="@+id/last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/last_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_name" />
 
-    <EditText
-        android:id="@+id/company_input"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/last_name_input"
-        app:layout_constraintStart_toStartOf="@id/first_name_input" />
+        <EditText
+            android:id="@+id/last_name_input"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/first_name_input"
+            app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Phone number-->
-    <TextView
-        android:id="@+id/phone_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/phone_number"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/company" />
+        <!--Company-->
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            android:text="@string/company"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/last_name" />
 
-    <EditText
-        android:id="@+id/phone_number_input"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@id/company_input"
-        app:layout_constraintStart_toStartOf="@id/first_name_input" />
+        <EditText
+            android:id="@+id/company_input"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/last_name_input"
+            app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Email-->
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/email"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone_number" />
+        <!--Phone number-->
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/phone_number"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/company" />
 
-    <EditText
-        android:id="@+id/email_input"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/phone_number_input"
-        app:layout_constraintStart_toStartOf="@id/first_name_input" />
+        <EditText
+            android:id="@+id/phone_number_input"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@id/company_input"
+            app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Edit button-->
-    <Button
-        android:id="@+id/edit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/edit_contact"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@id/first_name_input"
-        app:layout_constraintTop_toBottomOf="@id/email_input"/>
+        <!--Email-->
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number" />
 
-    <!--Delete button-->
-    <Button
-        android:id="@+id/delete_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/delete_contact"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@id/first_name_input"
-        app:layout_constraintTop_toTopOf="parent"/>
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/phone_number_input"
+            app:layout_constraintStart_toStartOf="@id/first_name_input" />
 
-    <!--Send message button-->
-    <Button
-        android:id="@+id/send_message_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send_message"
-        app:layout_constraintStart_toStartOf="@id/email"
-        app:layout_constraintTop_toTopOf="@id/edit_button"/>
+        <!--Edit button-->
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_contact"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/first_name_input"
+            app:layout_constraintTop_toBottomOf="@id/email_input"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Delete button-->
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_contact"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/first_name_input"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!--Send message button-->
+        <Button
+            android:id="@+id/send_message_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_message"
+            app:layout_constraintStart_toStartOf="@id/email"
+            app:layout_constraintTop_toTopOf="@id/edit_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -13,7 +13,8 @@ class ContactAdapter(private val contactList: List<Contact>)
     // Holds 1 item (contact_name)
     // TODO add multiple textViews to show all data and make it look like a card so it looks clickable
     inner class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.contact_name)
+        val contactName: TextView = view.findViewById(R.id.list_contact_name)
+        val phoneNumber: TextView = view.findViewById(R.id.list_phone_number)
 
         // Makes the list items clickable
         init {
@@ -36,7 +37,8 @@ class ContactAdapter(private val contactList: List<Contact>)
     // Puts the contact name in the list
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val contact = contactList[position]
-        holder.textView.text = contact.firstName
+        holder.contactName.text = contact.firstName
+        holder.phoneNumber.text= contact.phoneNumber
     }
 
     // Returns size of list

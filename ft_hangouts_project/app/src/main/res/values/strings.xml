@@ -16,4 +16,5 @@
     <string name="send">send</string>
     <string name="to">To:</string>
     <string name="message">Message</string>
+    <string name="separator">:</string>
 </resources>

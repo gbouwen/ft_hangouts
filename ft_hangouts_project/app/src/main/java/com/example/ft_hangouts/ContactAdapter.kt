@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+
 
 class ContactAdapter(private val contactList: List<Contact>)
     : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
@@ -19,6 +21,8 @@ class ContactAdapter(private val contactList: List<Contact>)
         // Makes the list items clickable
         init {
             view.setOnClickListener {
+                val backgroundColor = ContextCompat.getColor(view.context, R.color.background)
+                view.setBackgroundColor(backgroundColor)
                 val position: Int = adapterPosition
                 val intent = Intent(view.context, ContactDetails::class.java)
                 intent.putExtra("contact_id", contactList[position].id)

@@ -35,8 +35,8 @@ class AddContact : AppCompatActivity() {
         }
 
         // Get DataBase instance and add Contact to DataBase
-        val dataBaseHelper = DataBase(this)
-        dataBaseHelper.addToDatabase(contact)
+        val db = DataBase(this)
+        db.addToDatabase(contact)
         finish()
     }
 }

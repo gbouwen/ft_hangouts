@@ -83,8 +83,11 @@ class ContactDetails : AppCompatActivity() {
         return (Contact(id, firstName, lastName, company, phoneNumber, email))
     }
 
+    // Sends id to SendMessage Activity and starts it
     private fun sendMessage() {
-        val intent = Intent(this, SendMessage::class.java)
-        startActivity(intent)
+        val id = intent.getLongExtra("contact_id", 0)
+        val sendMessageIntent = Intent(this, SendMessage::class.java)
+        sendMessageIntent.putExtra("contact_id", id)
+        startActivity(sendMessageIntent)
     }
 }

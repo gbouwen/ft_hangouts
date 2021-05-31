@@ -24,7 +24,7 @@ class Contact(var id: Long,
 
     // Check if phone number or first name is empty
     private fun checkIfEmpty(): String {
-        var msg: String = "ok"
+        var msg = "ok"
 
         if (phoneNumber.isEmpty() || firstName.isEmpty()) {
             msg = "Error: Fields with a '*' can't be empty"

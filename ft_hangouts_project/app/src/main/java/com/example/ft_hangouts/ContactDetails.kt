@@ -72,11 +72,11 @@ class ContactDetails : AppCompatActivity() {
     //Gets all the values of the InputText fields and creates a contact from it
     private fun createContactFromInputTextFields(): Contact {
         val id = intent.getLongExtra("contact_id", 0)
-        val firstName = binding.editFirstNameInput.text.toString()
-        val lastName = binding.editLastNameInput.text.toString()
-        val company = binding.editCompanyInput.text.toString()
-        val phoneNumber = binding.editPhoneNumberInput.text.toString()
-        val email = binding.editEmailInput.text.toString()
+        val firstName = binding.editFirstNameInput.text.toString().trim()
+        val lastName = binding.editLastNameInput.text.toString().trim()
+        val company = binding.editCompanyInput.text.toString().trim()
+        val phoneNumber = binding.editPhoneNumberInput.text.toString().trim()
+        val email = binding.editEmailInput.text.toString().trim()
 
         return (Contact(id, firstName, lastName, company, phoneNumber, email))
     }

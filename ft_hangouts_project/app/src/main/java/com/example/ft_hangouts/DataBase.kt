@@ -16,7 +16,6 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
     private val columnPhoneNumber = "PHONE_NUMBER"
     private val columnEmail = "EMAIL"
 
-    // This function is called the first time a database is accessed. It creates the database.
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableStatement: String = "CREATE TABLE $contactTable ($columnId INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$columnFirstName TEXT, $columnLastName TEXT, $columnCompany TEXT, " +
@@ -24,10 +23,9 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         db?.execSQL(createTableStatement)
     }
 
-    // This function is called if the database version number changes.
-    // It prevents previous users apps from breaking when you change the database design.
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        db?.execSQL("DROP TABLE IF EXISTS $contactTable")
+        onCreate(db)
     }
 
     //Adds the contact to the DataBase
@@ -81,7 +79,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         return Contact(id, firstName, lastName, company, phoneNumber, email)
     }
 
-    // Function to get a single contact from the id argument
+    // Function to get the contact with id argument
     fun getContact(id: Long): Contact {
         val db = this.readableDatabase
         val query = "SELECT * FROM $contactTable WHERE $columnId = $id"
@@ -92,7 +90,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         return contact
     }
 
-    // Deletes a contact from the database
+    // Deletes the contact with contact_id from the database
     fun deleteContact(id: Long) {
         val db = this.writableDatabase
         val query = "DELETE FROM $contactTable WHERE $columnId = $id"

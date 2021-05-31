@@ -8,12 +8,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-
 class ContactAdapter(private val contactList: List<Contact>)
     : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
-
-    // Holds 1 item (contact_name)
-    // TODO add multiple textViews to show all data and make it look like a card so it looks clickable
+    
+    // Holds 2 item (contact_name and phone_number)
     inner class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val contactName: TextView = view.findViewById(R.id.list_contact_name)
         val phoneNumber: TextView = view.findViewById(R.id.list_phone_number)
@@ -21,8 +19,11 @@ class ContactAdapter(private val contactList: List<Contact>)
         // Makes the list items clickable
         init {
             view.setOnClickListener {
+                // Change background color on click
                 val backgroundColor = ContextCompat.getColor(view.context, R.color.background)
                 view.setBackgroundColor(backgroundColor)
+
+                // Go to contact details with the right contact_id
                 val position: Int = adapterPosition
                 val intent = Intent(view.context, ContactDetails::class.java)
                 intent.putExtra("contact_id", contactList[position].id)

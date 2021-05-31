@@ -7,6 +7,9 @@ class Contact(var id: Long,
               val phoneNumber: String,
               val email: String) {
 
+    // Calls checkIfEmpty() and checkSize() to validate the input
+    // Return errorMessage on failure
+    // Return "ok" on success
     fun validateInput(): String {
         var errorMessage = "ok"
 
@@ -19,6 +22,7 @@ class Contact(var id: Long,
         return errorMessage
     }
 
+    // Check if phone number or first name is empty
     private fun checkIfEmpty(): String {
         var msg: String = "ok"
 
@@ -28,6 +32,7 @@ class Contact(var id: Long,
         return msg
     }
 
+    // Check if string length is not > 32
     private fun checkSize(): String {
         var msg: String = "ok"
 

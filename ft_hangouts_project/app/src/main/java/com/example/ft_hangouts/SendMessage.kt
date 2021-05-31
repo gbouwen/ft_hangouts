@@ -27,7 +27,7 @@ class SendMessage : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
                 val message: EditText = findViewById(R.id.message_body)
-                val messageString = message.text.toString().trim()
+                val messageString = message.text.toString()
                 if (messageString.isNotEmpty()) {
                     sendSMS(messageString)
                 }

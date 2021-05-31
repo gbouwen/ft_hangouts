@@ -17,6 +17,7 @@ class AddContact : AppCompatActivity() {
         binding.createButton.setOnClickListener { createNewUser(binding) }
     }
 
+    // Creates a new user from the inputText fields and adds it to the database
     private fun createNewUser(binding: AddContactBinding) {
         // Create new contact with the values from the input fields
         val contact = Contact( -1L,

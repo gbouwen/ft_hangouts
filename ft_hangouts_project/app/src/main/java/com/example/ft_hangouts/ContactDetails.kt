@@ -9,22 +9,23 @@ import com.example.ft_hangouts.databinding.ContactDetailsBinding
 class ContactDetails : AppCompatActivity() {
 
     private lateinit var binding: ContactDetailsBinding
+    private lateinit var db: DataBase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ContactDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Edits the contact details and returns to MainActivity
+        // Get DataBase object
+        db = DataBase(this)
+
+        // Updates the contact details and returns to MainActivity
         binding.updateButton.setOnClickListener { updateContact() }
 
         // Deletes the contact and returns to MainActivity
-        // TODO add confirm dialog on delete
-        binding.deleteButton.setOnClickListener {
-            deleteContact()
-            finish()
-        }
+        binding.deleteButton.setOnClickListener { deleteContact() }
 
+        // Goes to sendMessage activity
         binding.sendMessageButton.setOnClickListener { sendMessage() }
     }
 
@@ -37,9 +38,9 @@ class ContactDetails : AppCompatActivity() {
 
     // Gets the correct contact from the database by using the contact_id from the intent
     private fun showContactInfo() {
-        val db = DataBase(this)
         val id = intent.getLongExtra("contact_id", 0)
         val contact = db.getContact(id)
+
         binding.editFirstNameInput.setText(contact.firstName)
         binding.editLastNameInput.setText(contact.lastName)
         binding.editCompanyInput.setText(contact.company)
@@ -53,11 +54,11 @@ class ContactDetails : AppCompatActivity() {
         val id = intent.getLongExtra("contact_id", 0)
         db.deleteContact(id)
         Toast.makeText(this, "Contact deleted", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     // Edits the contact data
     private fun updateContact() {
-        val db = DataBase(this)
         val contact = createContactFromInputTextFields()
         val error = contact.validateInput()
         if (error != "ok") {

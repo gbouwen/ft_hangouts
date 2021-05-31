@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SendMessage : AppCompatActivity() {
 
-    lateinit var contact: Contact
+    private lateinit var contact: Contact
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,8 +48,12 @@ class SendMessage : AppCompatActivity() {
         val db = DataBase(this)
         val id = intent.getLongExtra("contact_id", 0)
         contact = db.getContact(id)
-        val contactName: TextView = findViewById(R.id.send_contact_name)
-        contactName.text = contact.firstName
+        val firstName: TextView = findViewById(R.id.send_first_name)
+        firstName.text = contact.firstName
+        val lastName: TextView = findViewById(R.id.send_last_name)
+        lastName.text = contact.lastName
+        val phoneNumber: TextView = findViewById(R.id.send_phone_number)
+        phoneNumber.text = contact.phoneNumber
     }
 
     // Sends the SMS to the contact

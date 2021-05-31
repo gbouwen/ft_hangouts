@@ -14,29 +14,51 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:text="@string/to"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/send_contact_name"
+        android:id="@+id/send_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
-        tools:text="contact name"
+        tools:text="firstName"
         app:layout_constraintStart_toEndOf="@id/to_contact"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/send_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        tools:text="lastName"
+        app:layout_constraintStart_toEndOf="@id/send_first_name"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/send_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        tools:text="(phoneNumber)"
+        app:layout_constraintStart_toStartOf="@id/send_first_name"
+        app:layout_constraintTop_toBottomOf="@id/send_first_name"/>
 
     <EditText
         android:id="@+id/message_body"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="128dp"
         android:hint="@string/message"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to_contact"/>
+        app:layout_constraintTop_toBottomOf="@id/send_phone_number"/>
 
     <Button
         android:id="@+id/send_button"

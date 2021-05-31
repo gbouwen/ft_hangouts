@@ -101,9 +101,8 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "contacts.db", null
         cursor.close()
     }
 
-    // Edits the data of the contact
-    // TODO need to figure out how to update every column
-    fun editContact(contact: Contact) {
+    // Updates the data of the contact
+    fun updateContact(contact: Contact) {
         val db = this.writableDatabase
         val query = "UPDATE $contactTable " +
                 "SET $columnFirstName = '${contact.firstName}', " +

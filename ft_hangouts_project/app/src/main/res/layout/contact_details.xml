@@ -13,7 +13,7 @@
 
         <!--Title-->
         <TextView
-            android:id="@+id/contact_details"
+            android:id="@+id/edit_contact_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -26,7 +26,7 @@
 
         <!--First name -->
         <TextView
-            android:id="@+id/first_name"
+            android:id="@+id/edit_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -35,17 +35,17 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/contact_details" />
+            app:layout_constraintTop_toBottomOf="@id/edit_contact_details" />
 
         <EditText
-            android:id="@+id/first_name_input"
+            android:id="@+id/edit_first_name_input"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:layout_marginTop="16dp"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/contact_details"
-            app:layout_constraintStart_toEndOf="@id/first_name" />
+            app:layout_constraintTop_toBottomOf="@id/edit_contact_details"
+            app:layout_constraintStart_toEndOf="@id/edit_first_name" />
 
         <!--Last name-->
         <TextView
@@ -58,20 +58,20 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first_name" />
+            app:layout_constraintTop_toBottomOf="@id/edit_first_name" />
 
         <EditText
-            android:id="@+id/last_name_input"
+            android:id="@+id/edit_last_name_input"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/first_name_input"
-            app:layout_constraintStart_toStartOf="@id/first_name_input" />
+            app:layout_constraintTop_toBottomOf="@id/edit_first_name_input"
+            app:layout_constraintStart_toStartOf="@id/edit_first_name_input" />
 
         <!--Company-->
         <TextView
-            android:id="@+id/company"
+            android:id="@+id/edit_company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -83,17 +83,17 @@
             app:layout_constraintTop_toBottomOf="@id/last_name" />
 
         <EditText
-            android:id="@+id/company_input"
+            android:id="@+id/edit_company_input"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/last_name_input"
-            app:layout_constraintStart_toStartOf="@id/first_name_input" />
+            app:layout_constraintTop_toBottomOf="@id/edit_last_name_input"
+            app:layout_constraintStart_toStartOf="@id/edit_first_name_input" />
 
         <!--Phone number-->
         <TextView
-            android:id="@+id/phone_number"
+            android:id="@+id/edit_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -102,20 +102,20 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/company" />
+            app:layout_constraintTop_toBottomOf="@id/edit_company" />
 
         <EditText
-            android:id="@+id/phone_number_input"
+            android:id="@+id/edit_phone_number_input"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:inputType="phone"
-            app:layout_constraintTop_toBottomOf="@id/company_input"
-            app:layout_constraintStart_toStartOf="@id/first_name_input" />
+            app:layout_constraintTop_toBottomOf="@id/edit_company_input"
+            app:layout_constraintStart_toStartOf="@id/edit_first_name_input" />
 
         <!--Email-->
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/edit_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -124,26 +124,37 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/phone_number" />
+            app:layout_constraintTop_toBottomOf="@id/edit_phone_number" />
 
         <EditText
-            android:id="@+id/email_input"
+            android:id="@+id/edit_email_input"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/phone_number_input"
-            app:layout_constraintStart_toStartOf="@id/first_name_input" />
+            app:layout_constraintTop_toBottomOf="@id/edit_phone_number_input"
+            app:layout_constraintStart_toStartOf="@id/edit_first_name_input" />
+
+        <!--Error message-->
+        <TextView
+            android:id="@+id/edit_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/edit_email_input"
+            app:layout_constraintEnd_toEndOf="@id/edit_first_name_input"
+            tools:text="Error message"/>
 
         <!--Edit button-->
         <Button
-            android:id="@+id/edit_button"
+            android:id="@+id/update_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edit_contact"
+            android:text="@string/update_contact"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="@id/first_name_input"
-            app:layout_constraintTop_toBottomOf="@id/email_input"/>
+            app:layout_constraintEnd_toEndOf="@id/edit_first_name_input"
+            app:layout_constraintTop_toBottomOf="@id/edit_error_message"/>
 
         <!--Delete button-->
         <Button
@@ -152,7 +163,7 @@
             android:layout_height="wrap_content"
             android:text="@string/delete_contact"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="@id/first_name_input"
+            app:layout_constraintEnd_toEndOf="@id/edit_first_name_input"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <!--Send message button-->
@@ -161,8 +172,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send_message"
-            app:layout_constraintStart_toStartOf="@id/email"
-            app:layout_constraintTop_toTopOf="@id/edit_button"/>
+            app:layout_constraintStart_toStartOf="@id/edit_email"
+            app:layout_constraintTop_toTopOf="@id/update_button"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

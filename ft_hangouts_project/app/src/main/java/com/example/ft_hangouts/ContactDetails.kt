@@ -16,10 +16,7 @@ class ContactDetails : AppCompatActivity() {
         setContentView(binding.root)
 
         // Edits the contact details and returns to MainActivity
-        binding.editButton.setOnClickListener {
-            editContact()
-            finish()
-        }
+        binding.updateButton.setOnClickListener { updateContact() }
 
         // Deletes the contact and returns to MainActivity
         // TODO add confirm dialog on delete
@@ -28,9 +25,7 @@ class ContactDetails : AppCompatActivity() {
             finish()
         }
 
-        binding.sendMessageButton.setOnClickListener {
-            sendMessage()
-        }
+        binding.sendMessageButton.setOnClickListener { sendMessage() }
     }
 
     override fun onResume() {
@@ -45,11 +40,11 @@ class ContactDetails : AppCompatActivity() {
         val db = DataBase(this)
         val id = intent.getLongExtra("contact_id", 0)
         val contact = db.getContact(id)
-        binding.firstNameInput.setText(contact.firstName)
-        binding.lastNameInput.setText(contact.lastName)
-        binding.companyInput.setText(contact.company)
-        binding.phoneNumberInput.setText(contact.phoneNumber)
-        binding.emailInput.setText(contact.email)
+        binding.editFirstNameInput.setText(contact.firstName)
+        binding.editLastNameInput.setText(contact.lastName)
+        binding.editCompanyInput.setText(contact.company)
+        binding.editPhoneNumberInput.setText(contact.phoneNumber)
+        binding.editEmailInput.setText(contact.email)
     }
 
     // Deletes the contact from the database
@@ -57,25 +52,31 @@ class ContactDetails : AppCompatActivity() {
         val db = DataBase(this)
         val id = intent.getLongExtra("contact_id", 0)
         db.deleteContact(id)
-        Toast.makeText(this, "Deleted contact", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Contact deleted", Toast.LENGTH_SHORT).show()
     }
 
     // Edits the contact data
-    private fun editContact() {
+    private fun updateContact() {
         val db = DataBase(this)
         val contact = createContactFromInputTextFields()
-        db.editContact(contact)
-        Toast.makeText(this, "Edited contact", Toast.LENGTH_SHORT).show()
+        val error = contact.validateInput()
+        if (error != "ok") {
+            binding.editErrorMessage.text = error
+            return
+        }
+        db.updateContact(contact)
+        Toast.makeText(this, "Contact updated", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     //Gets all the values of the InputText fields and creates a contact from it
     private fun createContactFromInputTextFields(): Contact {
         val id = intent.getLongExtra("contact_id", 0)
-        val firstName = binding.firstNameInput.text.toString()
-        val lastName = binding.lastNameInput.text.toString()
-        val company = binding.companyInput.text.toString()
-        val phoneNumber = binding.phoneNumberInput.text.toString()
-        val email = binding.emailInput.text.toString()
+        val firstName = binding.editFirstNameInput.text.toString()
+        val lastName = binding.editLastNameInput.text.toString()
+        val company = binding.editCompanyInput.text.toString()
+        val phoneNumber = binding.editPhoneNumberInput.text.toString()
+        val email = binding.editEmailInput.text.toString()
 
         return (Contact(id, firstName, lastName, company, phoneNumber, email))
     }

@@ -20,17 +20,19 @@ class AddContact : AppCompatActivity() {
     private fun createNewUser(binding: AddContactBinding) {
         // Create new contact with the values from the input fields
         val contact = Contact( -1L,
-            binding.firstNameInput.text.toString(),
-            binding.lastNameInput.text.toString(),
-            binding.companyInput.text.toString(),
-            binding.phoneNumberInput.text.toString(),
-            binding.emailInput.text.toString()
+            binding.firstNameInput.text.toString().trim(),
+            binding.lastNameInput.text.toString().trim(),
+            binding.companyInput.text.toString().trim(),
+            binding.phoneNumberInput.text.toString().trim(),
+            binding.emailInput.text.toString().trim()
         )
 
-        // Phone number and first name can't be empty
-        // TODO GIVE CLEAR ERROR MESSAGE IF EMPTY
-        if (contact.phoneNumber.isEmpty() || contact.firstName.isEmpty())
+        // Validates user input and shows error in TextView
+        val error = contact.validateInput()
+        if (error != "ok") {
+            binding.addErrorMessage.text = error
             return
+        }
 
         // Get DataBase instance and add Contact to DataBase
         val dataBaseHelper = DataBase(this)

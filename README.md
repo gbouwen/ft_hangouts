@@ -13,6 +13,6 @@ Clicking on a contact will let you edit their details, delete them from the list
 The message will be sent as a SMS. <br />
 
 <img src="/img/contactList.jpg" alt="Contact List" width="35%" height="35%">
-<img src="/img/newContact.jpg" alt="New contact" width="50%" height="50%">
-<img src="/img/contactDetails.jpg" alt="Contact Details" width="500px" height="700px">
-<img src="/img/sendMessage.jpg" alt="Send Message" width="500px" height="700px">
+<img src="/img/newContact.jpg" alt="New contact" width="35%" height="35%">
+<img src="/img/contactDetails.jpg" alt="Contact Details" width="35%" height="35%">
+<img src="/img/sendMessage.jpg" alt="Send Message" width="35%" height="35%">

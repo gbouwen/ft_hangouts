@@ -13,10 +13,10 @@ Clicking on a contact will let you edit their details, delete them from the list
 The message will be sent as a SMS. <br />
 
 Main activity that shows all the contacts <br />
-<img src="/img/contactList.jpg" alt="Contact List" width="35%" height="35%">
+<img src="/img/contactList.jpg" alt="Contact List" width="35%" height="35%">  <br />
 After clicking the add button, you will be taken to this screen to add a new contact <br />
-<img src="/img/newContact.jpg" alt="New contact" width="35%" height="35%">
+<img src="/img/newContact.jpg" alt="New contact" width="35%" height="35%">  <br />
 After clicking on a contact in the contact list, you will be taken to the contact details screen <br />
-<img src="/img/contactDetails.jpg" alt="Contact Details" width="35%" height="35%">
+<img src="/img/contactDetails.jpg" alt="Contact Details" width="35%" height="35%">  <br />
 After clicking on the send message button, you will be taken to the send message screen <br />
-<img src="/img/sendMessage.jpg" alt="Send Message" width="35%" height="35%">
+<img src="/img/sendMessage.jpg" alt="Send Message" width="35%" height="35%">  <br />

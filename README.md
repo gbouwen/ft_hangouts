@@ -8,7 +8,7 @@ Create a Virtual Device in the AVD Manager, make sure to have enough space on yo
 (You can also connect your own Android device if you have one). <br />
 Pick the Emulator or your own device from the list of available devices and then press 'Run'. 
 
-![Screenshot1](/img/contactList.jpg)
-![Screenshot2](/img/addContact.jpg)
+![Screenshot1](/img/contactList.jpg = 250x250)
+![Screenshot2](/img/newContact.jpg)
 ![Screenshot3](/img/contactDetails.jpg)
 ![Screenshot4](/img/sendMessage.jpg)

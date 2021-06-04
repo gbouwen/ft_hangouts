@@ -12,7 +12,10 @@ New contacts get added to a SQLite database. The contact list on the main screen
 Clicking on a contact will let you edit their details, delete them from the list, or send them a message. <br />
 The message will be sent as a SMS. <br />
 
-![Screenshot1](/img/contactList.jpg){:height="50%" width="50%"}
+![Screenshot1](/img/contactList.jpg)
+
+<img src="/img/contactList.jpg" alt="Contact List" width="100px" height="100px">
+
 ![Screenshot2](/img/newContact.jpg)
 ![Screenshot3](/img/contactDetails.jpg)
 ![Screenshot4](/img/sendMessage.jpg)
